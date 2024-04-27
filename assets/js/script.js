@@ -94,8 +94,11 @@
 
         // Function to display the final score
         function displayScore() {
+            const name=localStorage.getItem("nom");
+            const prenom=localStorage.getItem("prenom");
             const scoreElement = document.getElementById("score");
-            scoreElement.textContent = `Your score: ${score}/${quiz.length}`;
+            scoreElement.textContent =`${name} ${prenom} votre score : ${score}/${quiz.length}`;
+            //  `Your score: ${score}/${quiz.length}`;
         }
 
         // Function to start the quiz

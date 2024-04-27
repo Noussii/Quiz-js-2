@@ -8,8 +8,24 @@
 </head>
 <body>
     <h1 >Bienvenue !</h1>
+    <form action="assets/quiz.html" method="post" onsubmit="return storeData()">
+        <label for="nom">Entrez votre nom :</label>
+        <input type="text" name="nom" id="nom" required>
+        <br>
+        <label for="prenom">Entrez votre prenom :</label>
+        <input type="text" name="prenom" id="prenom" required>
+        <br>
+        <button type="submit">Commencer</button>
+    </form>
     <p>Vous avez 5 seconds à répondre pour chaque question . Bonne chance !</p>
-    <a href="assets/quiz.html">Commencer</a>
 </body>
-<script src="assets/js/script.js"></script>
+<script>
+    function storeData() {
+        let name = document.getElementById('nom').value;
+        let prenom = document.getElementById('prenom').value;
+        localStorage.setItem('nom', name);
+        localStorage.setItem('prenom', prenom);
+        return true;
+    }
+</script>
 </html>
